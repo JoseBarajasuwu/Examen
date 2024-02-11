@@ -1,0 +1,114 @@
+CREATE TABLE Examen (
+    ExamenID INT PRIMARY KEY IDENTITY(1,1),
+    Nombre VARCHAR(255) NULL,
+    Descripcion VARCHAR(255) NULL
+);
+
+----------------
+USE [BdiExamen]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<JBL>
+-- Create date: 	<2/10/2024>
+-- Description:	<InsertarExamen>
+-- =============================================
+CREATE PROCEDURE [dbo].[InsertarExamen] (
+    @Nombre VARCHAR(255), 
+    @Descripcion VARCHAR(255)
+) AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Examen (Nombre, Descripcion) VALUES (@Nombre, @Descripcion);
+END
+GO
+----------------
+USE [BdiExamen]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<JBL>
+-- Create date: 	<2/10/2024>
+-- Description:	<Elimina un registro en la tabla por el ExamenID>
+-- =============================================
+CREATE PROCEDURE [dbo].[EliminarExamenPorId] (
+	@Id INT
+) AS
+BEGIN
+    SET NOCOUNT ON;
+    DELETE FROM Examen WHERE ExamenID = @Id;
+END
+GO
+----------------
+USE [BdiExamen]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<JBL>
+-- Create date: <2/10/2024>
+-- Description:	<Consulta todos los examenes>
+-- =============================================
+CREATE PROCEDURE [dbo].[ConsultarTodosLosExamenes] (
+	@Id INT
+) AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * FROM Examen;
+END
+GO
+----------------
+----------------
+USE [BdiExamen]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<JBL>
+-- Create date: 	<2/10/2024>
+-- Description:	<Actualiza un examen en específico>
+-- =============================================
+CREATE PROCEDURE [dbo].[ActualizarExamenDescripcion] (
+    @Id INT, 
+    @Nombre VARCHAR(255), 
+    @Descripcion VARCHAR(255)
+) AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF (@Nombre IS NULL OR LTRIM(RTRIM(@Nombre)) = '')
+    BEGIN
+        -- Si @Nombre es nulo o vacío, actualiza solo la Descripcion
+        UPDATE Examen SET Descripcion = @Descripcion WHERE ExamenID = @Id;
+    END
+    ELSE IF (@Descripcion IS NULL OR LTRIM(RTRIM(@Descripcion)) = '')
+    BEGIN
+        -- Si @Descripcion es nulo o vacío, actualiza solo el Nombre
+        UPDATE Examen SET Nombre = @Nombre WHERE ExamenID = @Id;
+    END
+    ELSE
+    BEGIN
+        -- Si ninguno de los parámetros es nulo o vacío, actualiza ambos
+        UPDATE Examen SET Nombre = @Nombre, Descripcion = @Descripcion WHERE ExamenID = @Id;
+    END
+END
+GO
+----------------

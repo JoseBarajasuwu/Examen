@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaExamne", "AgregarUsuarios\PruebaExamne.csproj", "{ECCBEF29-7CDC-4771-A926-2615C8D20DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apiexamen", "apiexamen\apiexamen.csproj", "{F1B9D338-7710-4E14-BF15-AC3F68FCB865}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECCBEF29-7CDC-4771-A926-2615C8D20DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCBEF29-7CDC-4771-A926-2615C8D20DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCBEF29-7CDC-4771-A926-2615C8D20DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCBEF29-7CDC-4771-A926-2615C8D20DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B9D338-7710-4E14-BF15-AC3F68FCB865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B9D338-7710-4E14-BF15-AC3F68FCB865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B9D338-7710-4E14-BF15-AC3F68FCB865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B9D338-7710-4E14-BF15-AC3F68FCB865}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD95BECB-5061-40DD-9FEB-BBE4403A9365}
+	EndGlobalSection
+EndGlobal
